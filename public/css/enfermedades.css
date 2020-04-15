@@ -1,0 +1,236 @@
+/*Variables*/
+
+:root{
+    --primario:#346beb;
+    --borde:#7ebbf7;
+    --secundario:#eff1f1;
+    --oscuro:#1315ab;
+    --sombra: 0 1px 5px rgba(104,104,104,0.8);
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    background: wheat;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1;
+}
+
+#enc
+ {
+    text-align: center;
+    color:black;
+    margin-left: 100px;
+
+ }
+ #enc h2{
+
+    margin-top: 70px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px coral;
+   
+
+ }
+
+
+.btn{
+    display:inline-block;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-size: 20px;
+    margin: 20px ;
+    border: 4px solid #ccc;
+    background: #ccc;
+    padding: 5px;
+    overflow: hidden;
+    transition: 0.5s all ease;
+    
+}
+
+.btn:hover{
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    background: #02075d;
+    border: 4px solid #02075d
+}
+
+
+
+/*Header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #02075d;
+    height: 1em;
+    border-bottom: 5px coral solid;
+
+}
+header li a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--secundario);
+    text-decoration: none;
+}
+
+header .actual a{
+    color: var(--borde);
+    font-weight: bold;
+    border: 2px solid var(--borde);
+    padding: 5px;
+   
+}
+
+header img{
+    width: 15em;
+}
+
+
+.logo{
+    cursor: pointer;
+}
+
+/*Barra Nav*/
+.main-nav{
+    list-style: none;
+    
+}
+
+.main-nav li { 
+    display: inline-block;
+    padding: 0px 20px;
+    background: #02075d;
+    text-transform: uppercase;
+    
+}
+
+.main-nav li a{
+    background:#02075d;
+    border-radius: 16px;
+}
+
+.main-nav li a:hover{
+    color: var(--primario);
+    
+}
+
+/*Seccion top*/
+
+#intro{
+
+    min-height: 500px;
+    background: url('../img/esteto.jpg') no-repeat 0 -330px;
+    text-align: center;
+    color: white;
+    border-bottom: 5px coral solid;
+}
+
+#intro h1{
+   margin-top: 190px;
+   margin-bottom: 10px;
+   font-size: 55px;
+   text-shadow: 2px 2px 2px black;
+    
+}
+
+
+.intro-contenido{
+    overflow: hidden;
+    
+}
+/**********************************************Informacion**********************************************************/
+
+article{
+    max-width: 1700px;
+    margin: 0px auto;
+    margin-left: 50px;
+    background-color:var(--secundario);
+    padding: 1em 2em 1em 2em;
+    border: 16px,var(--borde);
+    border-radius: 5%;
+    box-shadow: 3px 3px 5px ,var(--borde);
+    margin-bottom: 100px;
+    display: inline-block;
+    border-color: var(--borde);
+
+}
+
+
+
+.enfe{
+    width: 100%;
+    max-width: 1200px;
+    height: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+.enfe .infor{
+    width: 250px;
+    height: 550px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px(0,0,0,0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    background-color:var(--borde);
+    border: solid 0.5px;
+    border-color: var(--borde);
+    margin-top: 30px;
+    
+}
+
+.enfe .infor:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+
+.enfe .infor img{
+    width: 330px;
+    height: 220px;
+}
+
+.enfe .infor h3{
+    font-weight: 200;
+}
+
+.enfe .infor p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    justify-content: center;
+}
+article h3
+{
+    text-align: center;
+    border-bottom: 2px coral solid;
+}
+
+
+/***********************************************Footer**************************************************************/
+footer{
+    
+    background-color: #02075d;
+    color: white;
+    height: 200px;
+    align-content: center;
+    line-height: 30px;
+    border-top:5px coral solid ;
+}
+
+footer .contenedor-footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}

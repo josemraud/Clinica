@@ -1,0 +1,250 @@
+/*Variables*/
+:root{
+    --primario:#346beb;
+    --borde:#7ebbf7;
+    --secundario:#eff1f1;
+    --oscuro:#1315ab;
+    --sombra: 0 1px 5px rgba(104,104,104,0.8);
+}
+
+ #enc
+ {
+    text-align: left;
+    color:black;
+    margin-left: 100px;
+
+ }
+ #enc h2{
+
+    margin-top: 70px;
+    margin-bottom: 10px;
+    font-size: 55px;
+    text-shadow: 2px 2px 2px coral;
+   
+
+ }
+ 
+/*header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #02075d;
+    height: 1em;
+    border-bottom: 5px coral solid;
+
+}
+
+header .actual a{
+    color: var(--borde);
+    font-weight: bold;
+    border: 2px solid var(--borde);
+    padding: 5px;
+   
+}
+
+header img{
+    width: 15em;
+}
+
+
+.logo{
+    cursor: pointer;
+}
+
+html{
+    
+    font-family: 'Montserrat', sans-serif;
+    background: wheat;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li,a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--secundario);
+    text-decoration: none;
+}
+
+.btn{
+    display:inline-block;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-size: 20px;
+    margin: 20px ;
+    border: 4px solid #ccc;
+    background: #ccc;
+    
+    padding: 5px;
+    overflow: hidden;
+    transition: 0.5s all ease;
+    
+}
+
+.btn:hover{
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    background: #02075d;
+    border: 4px solid #02075d
+}
+
+.contenedor{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/*Barra Nav*/
+.main-nav{
+    list-style: none;
+    
+}
+
+
+
+.main-nav li { 
+    display: inline-block;
+    padding: 0px 20px;
+    background: #02075d;
+    text-transform: uppercase;
+    
+}
+
+.main-nav li a{
+    background:#02075d;
+    border-radius: 16px;
+}
+
+.main-nav li a:hover{
+    color: var(--primario);
+    
+}
+
+
+/********************************************Informacion citologia******************************************************************/
+
+
+
+
+
+article{
+        width: 920px;
+        margin: 0px auto;
+        margin-left: 50px;
+        background-color:var(--secundario);
+        padding: 1em 2em 1em 2em;
+        border: 16px,var(--borde);
+        border-radius: 5%;
+        box-shadow: 3px 3px 5px ,var(--borde);
+        margin-bottom: 100px;
+        display: inline-block;
+    
+    }
+article p{
+     line-height: 1.5;
+     justify-content: center;
+}
+
+article h3
+{
+    text-align: center;
+    border-bottom: 2px coral solid;
+}
+
+article h4
+{
+    text-align: center;
+    border-bottom: 2px coral solid;
+}
+article p a{
+     color:#fff;
+     text-decoration:none;
+}
+#i{
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*************************************************************************************************/
+
+/*Footer*/
+
+
+footer{
+    background-color: #02075d;
+    color: white;
+    height: 200px;
+    align-content: center;
+    line-height: 30px;
+    
+}
+
+.contenedor-footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@media (max-width: 923px) {
+    body{
+        width: 1010px;
+    }
+    header{
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+    }
+    header .logo{
+        width: 100%;
+        height: 2000px;
+        margin-bottom: 10px;
+    }
+    header .main-nav{
+        margin-top: 10px;
+        font-size: 20px;
+        height: 90px;
+        
+    }
+    header .main-nav ul li a{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    body{
+        width: 1010px;
+    }
+    header{
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+    }
+    header .logo{
+        width: 100%;
+        height: 2000px;
+        margin-bottom: 10px;
+    }
+    header .main-nav{
+        margin-top: 10px;
+        font-size: 20px;
+        height: 90px;
+        
+    }
+    header .main-nav ul li a{
+        font-size: 20px;
+    }
+    .citologia{
+        font-size: 30px;
+    }
+}
