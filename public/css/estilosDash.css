@@ -1,0 +1,46 @@
+/*Header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #02075d;
+    height: 1em;
+    border-bottom: 5px coral solid;
+
+}
+
+header .actual a{
+    color: var(--borde);
+    font-weight: bold;
+    border: 2px solid var(--borde);
+    padding: 5px;
+   
+}
+
+header img{
+    width: 15em;
+}
+
+
+.logo{
+    cursor: pointer;
+}
+
+
+
+footer{
+    background-color: #02075d;
+    color: white;
+    height: 150px;
+    align-content: center;
+    line-height: 30px;
+}
+
+.contenedor-footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}

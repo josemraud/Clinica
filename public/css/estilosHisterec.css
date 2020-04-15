@@ -1,0 +1,243 @@
+/*Variables*/
+
+:root{
+    --primario:#346beb;
+    --borde:#7ebbf7;
+    --secundario:#eff1f1;
+    --oscuro:#1315ab;
+    --sombra: 0 1px 5px rgba(104,104,104,0.8);
+}
+
+
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    background: wheat;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1;
+}
+
+
+
+.btn{
+    display:inline-block;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-size: 20px;
+    margin: 20px ;
+    border: 4px solid #ccc;
+    background: #ccc;
+    padding: 5px;
+    overflow: hidden;
+    transition: 0.5s all ease;
+    
+}
+
+.btn:hover{
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    background: #02075d;
+    border: 4px solid #02075d
+}
+
+
+
+/*Header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #02075d;
+    height: 1em;
+    border-bottom: 5px coral solid;
+
+}
+header li a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--secundario);
+    text-decoration: none;
+}
+
+header .actual a{
+    color: var(--borde);
+    font-weight: bold;
+    border: 2px solid var(--borde);
+    padding: 5px;
+   
+}
+
+header img{
+    width: 15em;
+}
+
+
+.logo{
+    cursor: pointer;
+}
+
+/*Barra Nav*/
+.main-nav{
+    list-style: none;
+    
+}
+
+.main-nav li { 
+    display: inline-block;
+    padding: 0px 20px;
+    background: #02075d;
+    text-transform: uppercase;
+    
+}
+
+.main-nav li a{
+    background:#02075d;
+    border-radius: 16px;
+}
+
+.main-nav li a:hover{
+    color: var(--primario);
+    
+}
+
+/*Seccion Histerectomia*/
+
+
+#histerectomia{
+    display: flex;
+    line-height: 30px;
+}
+
+#histerectomia .informacion{
+    display: flex;
+    flex-direction: row;
+}
+
+#histerectomia .informacion article{
+    width: 70%;
+    margin: 20px;
+    padding: 1em;
+    background: rgb(233, 231, 231);
+    box-shadow: var(--sombra);
+    border-radius: 15px;
+}
+
+#histerectomia .informacion article h1{
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 2px coral solid;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+#histerectomia .informacion article #imagen-hist{
+    text-align: center;
+}
+
+#histerectomia .informacion .sidebar{
+    width: 50%;
+    height: 40%;
+    margin: 20px;
+    padding: 1em;
+    text-align: center;
+    background: rgb(100, 98, 98);
+    color: white;
+    box-shadow: var(--sombra);
+    border-radius: 15px;
+
+}
+
+#histerectomia .informacion .ul{
+    color: black;
+}
+
+#histerectomia .informacion .sidebar h1{
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 2px coral solid;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#imagen-hist{
+    margin-bottom: 30px;
+}
+
+
+/*Footer*/
+
+
+footer{
+    
+    background-color: #02075d;
+    color: white;
+    height: 200px;
+    align-content: center;
+    line-height: 30px;
+    border-top:5px coral solid ;
+}
+
+footer .contenedor-footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 923px) {
+    body{
+        width: 1010px;
+    }
+    header{
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+    }
+    header .logo{
+        width: 100%;
+        height: 2000px;
+        margin-bottom: 10px;
+    }
+    header .main-nav{
+        margin-top: 10px;
+        font-size: 20px;
+        height: 90px;
+        
+    }
+    header .main-nav ul li a{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    body{
+        width: 1010px;
+    }
+    header{
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+    }
+    header .logo{
+        width: 100%;
+        height: 2000px;
+        margin-bottom: 10px;
+    }
+    header .main-nav{
+        margin-top: 10px;
+        font-size: 20px;
+        height: 90px;
+        
+    }
+    header .main-nav ul li a{
+        font-size: 20px;
+    }
+    .informacion{
+        font-size: 30px;
+    }
+}
