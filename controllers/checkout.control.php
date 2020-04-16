@@ -42,13 +42,13 @@ function createPaypalTransacction( $_amount , $_items )
 
     $items = new \PayPal\Api\ItemList();
     $_amount = 0 ;
-    $Dolar = 24.80;
+    $cambio = 24.80;
     foreach ($_items as $_item) {
         $item = new \PayPal\Api\Item();
         $item->setSku($_item["codCarrito"]);
         $item->setName($_item["Descripcion"]);
         $item->setQuantity(1);
-        $_item["precio"]=$_item["precio"]/$Dolar;
+        $_item["precio"]=$_item["precio"]/$cambio;
         $item->setPrice(floatval($_item["precio"]));
         $_amount += floatval($_item["precio"]* 1);
         $item->setCurrency('USD');
