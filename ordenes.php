@@ -113,7 +113,7 @@ session_start();
     <meta charset="utf-8" />
     <title>Agenda en Linea</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="public/css/agenda.css">
+    <link rel="stylesheet" href="public/css/papier.css">
     <link rel="stylesheet" href="public/css/estilosMain.css">
       <link href="https://fonts.googleapis.com/css?family=Solway&display=swap" rel="stylesheet">
     <script src="public/js/jquery.min.js"></script>
@@ -137,6 +137,91 @@ session_start();
             </div>
 
 </header>
+</div>
+
+<div ></div>
+<div >
+
+
+<h3 style="font-size: 35px; ">Carrito:</h3>
+<div class="col-s-10 col-m-10 col-l-10">
+    <table style=" " class="blueTable" class="col-10 col-offset-1">
+    <tr>
+        <th style="font-size: 30px; " >Nombre</th>
+        <th style="font-size: 30px; ">Fecha</th>
+        <th style="font-size: 30px; ">Precio</th>
+        <th style="font-size: 30px; ">Sub-Total</th>
+        <th style="font-size: 30px; " ></th>
+    </tr>
+
+    <?php
+        if(!empty($_SESSION["cart"])){
+            $total = 0;
+            foreach ($_SESSION["cart"] as $key => $value) {
+                ?>
+                <tr style="text-align:center">
+                    <td><?php echo $value["Descripcion"]; ?></td>
+                    <td><?php echo $value["cantidad"]; ?></td>
+                    <td>L. <?php echo $value["precio"]; ?></td>
+                    <td>
+                        L. <?php echo number_format(1 * $value["precio"], 2);?></td>
+                    <td><a href="ordenes.php?action=delete&id=<?php echo $value["codCarrito"]; ?>"><span
+                                class="btn">Remover</span></a></td>
+
+                </tr>
+                <?php
+                $total = $total + (1 * $value["precio"]);
+
+
+            }
+
+                ?>
+                <tr>
+                    <td colspan="3" align="right">Total:</td>
+                    <th align="left">L.  <?php echo number_format($total, 2); ?></th>
+
+                    <td></td>
+                </tr>
+                <?php
+
+            }
+        ?>
+
+    </table>
+      </div>
+
+          <?php $fecha = date('H', strtotime('-8 hours'));
+
+
+    ($fecha <=8 || $fecha >=21) ? $resu="disabled" : $resu="enabled";
+
+?>
+<div class="col-s-8 col-m-8 col-l-8 pagar ">
+
+              <a style="  border-radius:3px;
+                border:1px solid #942911;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:13px;
+                font-weight:bold;
+                padding:8px 24px;
+                text-decoration:none;
+                background-color: navy;
+                text-shadow:0px 1px 0px #854629;"href="index.php?page=checkout" class="btn">Pagar</a>
+
+
+    <form method="post">
+
+ <input type="submit" name="limpiar" style="margin-top: 5px;" class="btn"
+    value="Limpiar Carrito">
+
+           </form>
+</div>
+
+</div>
+</div>
 <body style="background-color:#ECF0F1;">
   <br><br><br>
     <div   class="col-s-12 col-m-12 col-l-12 " >
@@ -163,9 +248,9 @@ session_start();
 
                         <form  method="post" action="ordenes.php?action=add&id=<?php echo $row["cod_producto"]; ?>">
                                 <img src="public/img/<?php echo $row["prodimg"]; ?>" alt="">
-                                <h1 style="font-size:20px;font-family: 'Solway', serif; margin-bottom:auto;" ><?php echo $row["descripcion"]; ?></h5>
-                                <h1 class="text-danger" style="font-family: 'Solway', serif; font-size:20px;"> <?php echo  "Precio:"." L. ".$row["precio"]; ?></h5>
-                                <label style="font-family: 'Solway', serif;"for="">Escoge la fecha:</label>
+                                <h1 style="font-size:20px; margin-bottom:auto;" ><?php echo $row["descripcion"]; ?></h5>
+                                <h1 class="text-danger" style=" font-size:20px;"> <?php echo  "Precio:"." L. ".$row["precio"]; ?></h5>
+                                <label style=""for="">Escoge la fecha:</label>
                                  <input type="date"  name="cantidad" id="cantidad"/>
                                 <input type="hidden"name="descripcion" value="<?php echo $row["descripcion"]; ?>">
                                 <input type="hidden" name="precio" value="<?php echo $row["precio"]; ?>">
@@ -184,91 +269,7 @@ session_start();
               
               </section>
 
-  </div>
-
-        <div ></div>
-        <div >
-
-
-        <h3 style="font-size: 35px;font-family: 'Solway', serif; ">Carrito:</h3>
-        <div class="col-s-10 col-m-10 col-l-10">
-            <table style="font-family: 'Solway', serif; " class="blueTable" class="col-10 col-offset-1">
-            <tr>
-                <th style="font-size: 30px;font-family: 'Solway', serif; " >Nombre</th>
-                <th style="font-size: 30px;font-family: 'Solway', serif; ">Fecha</th>
-                <th style="font-size: 30px;font-family: 'Solway', serif; ">Precio</th>
-                <th style="font-size: 30px;font-family: 'Solway', serif; ">Sub-Total</th>
-                <th style="font-size: 30px;font-family: 'Solway', serif; " ></th>
-            </tr>
-
-            <?php
-                if(!empty($_SESSION["cart"])){
-                    $total = 0;
-                    foreach ($_SESSION["cart"] as $key => $value) {
-                        ?>
-                        <tr style="text-align:center">
-                            <td><?php echo $value["Descripcion"]; ?></td>
-                            <td><?php echo $value["cantidad"]; ?></td>
-                            <td>L. <?php echo $value["precio"]; ?></td>
-                            <td>
-                                L. <?php echo number_format(1 * $value["precio"], 2);?></td>
-                            <td><a href="ordenes.php?action=delete&id=<?php echo $value["codCarrito"]; ?>"><span
-                                        class="btn">Remover</span></a></td>
-
-                        </tr>
-                        <?php
-                        $total = $total + (1 * $value["precio"]);
-
-
-                    }
-
-                        ?>
-                        <tr>
-                            <td colspan="3" align="right">Total:</td>
-                            <th align="left">L.  <?php echo number_format($total, 2); ?></th>
-
-                            <td></td>
-                        </tr>
-                        <?php
-
-                    }
-                ?>
-
-            </table>
-              </div>
-
-                  <?php $fecha = date('H', strtotime('-8 hours'));
-
-
-            ($fecha <=8 || $fecha >=21) ? $resu="disabled" : $resu="enabled";
-
- ?>
-   <div class="col-s-8 col-m-8 col-l-8 pagar ">
-
-                      <a style="  border-radius:3px;
-                        border:1px solid #942911;
-                        display:inline-block;
-                        cursor:pointer;
-                        color:#ffffff;
-                        font-family:Arial;
-                        font-size:13px;
-                        font-weight:bold;
-                        padding:8px 24px;
-                        text-decoration:none;
-                        background-color: navy;
-                        text-shadow:0px 1px 0px #854629;"href="index.php?page=checkout" class="btn">Pagar</a>
-
-
-            <form method="post">
-
-         <input type="submit" name="limpiar" style="margin-top: 5px;" class="btn"
-            value="Limpiar Carrito">
-
-                   </form>
-        </div>
-
-  </div>
-    </div>
+ 
 
 
 </body>
